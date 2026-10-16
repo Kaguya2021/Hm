@@ -1,4 +1,4 @@
-import { Bot, InlineKeyboard } from 'grammY';
+import { Bot, InlineKeyboard } from 'grammy';
 import { 
   getUserSettings, 
   updateUserSettings, 
@@ -90,7 +90,6 @@ export function createBot() {
     await deleteSite(ctx.from.id, siteId);
     await ctx.answerCallbackQuery('Сайт успешно удален!');
     
-    // Перенаправляем обратно в список сайтов
     const sites = await getSites(ctx.from.id);
     if (sites.length === 0) {
       const kb = new InlineKeyboard().text('➕ Добавить сайт', 'menu_add_site').row().text('« Назад', 'menu_main');
@@ -129,7 +128,7 @@ export function createBot() {
       .text('« Назад', 'menu_main');
 
     await ctx.editMessageText(
-      `⏱ **Настройка интервала**\n\nТекущий интервал: **${settings.check_interval} минут**.\n\n*Примечание*: Для бесплатных сервисов Render рекомендуется интервал 10–15 минут для предотвращения засыпания сервера без избыточной нагрузки.\n\nВыбери новый интервал:`,
+      `⏱ **Настройка интервал**\n\nТекущий интервал: **${settings.check_interval} минут**.\n\n*Примечание*: Для бесплатных сервисов Render рекомендуется интервал 10–15 минут для предотвращения засыпания сервера без избыточной нагрузки.\n\nВыбери новый интервал:`,
       { parse_mode: 'Markdown', reply_markup: keyboard }
     );
     await ctx.answerCallbackQuery();
@@ -256,3 +255,4 @@ export function createBot() {
 
   return bot;
 }
+  
