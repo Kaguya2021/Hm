@@ -1,0 +1,21 @@
+{
+  "name": "render-ping-bot",
+  "version": "1.0.0",
+  "description": "Telegram bot for monitoring and keeping websites active on Render",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "grammY": "^1.21.1",
+    "pg": "^8.11.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
+
