@@ -36,4 +36,3 @@ main().catch((err) => {
   console.error('Критическая ошибка при запуске:', err);
   process.exit(1);
 });
-
